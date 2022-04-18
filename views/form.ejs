@@ -4,44 +4,61 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./index.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Document</title>
   </head>
   <body>
     <nav class="navbar">
-      <a href="" style="text-decoration: none; margin-left:5%;"><h1>MegaSeal</h1></a>
+      <a href="" style="text-decoration: none; margin-left: 5%"
+        ><h1>MegaSeal</h1></a
+      >
     </nav>
-    
 
-
- <div class="right">
-  <h2>Enter Details : </h2>
-    <div class="form">
-        <p>Account Type : </p>
+    <div class="right">
+      <h2>Enter Details :</h2>
+      <div class="form">
+        <p>Account Type :</p>
 
         <select id="type" required>
-          <option value="none" selected disabled hidden>Select a Type </option>
-            <option value="1">1. Mobile</option>
-            <option value="2">2. UPI</option>
-            <option value="3">3. IFSC CODE</option>
+          <option value="none" selected disabled hidden>Select a Type</option>
+          <option value="1">1. Mobile</option>
+          <option value="2">2. UPI</option>
+          <option value="3">3. IFSC CODE</option>
         </select>
-        <br/>
+        <br />
 
         <p>Account info :</p>
-        <input type="text" name="info" id="info"placeholder="Info"/><br />   
-        <p>Add Screenshots : </p>
-        <input id="file" type="file" onchange="storeImages(event)" multiple />   
-        <p>Add Description : </p>
-        <textarea type="text" name="description" id="description" placeholder="Description"></textarea><br /><br />
+        <input type="text" name="info" id="info" placeholder="Info" /><br />
+        <p>Add Screenshots :</p>
+        <input id="file" type="file" onchange="storeImages(event)" multiple />
+        <p>Add Description :</p>
+        <textarea
+          type="text"
+          name="description"
+          id="description"
+          placeholder="Description"
+        ></textarea
+        ><br /><br />
         <button onclick="submitForm()" id="signup">Submit Details</button>
+      </div>
     </div>
-  </div>
 
-  <footer>
-    <h1 style="text-align: center; text-transform: capitalize;color: #26133F;margin-left: 0;">MegaSeal</h1>
-    <p style="text-align: center; text-transform: capitalize;color: #000000;">Copyright © 2022 MegaSeal. All rights reserved</p>
-</footer>
+    <footer>
+      <h1
+        style="
+          text-align: center;
+          text-transform: capitalize;
+          color: #26133f;
+          margin-left: 0;
+        "
+      >
+        MegaSeal
+      </h1>
+      <p style="text-align: center; text-transform: capitalize; color: #000000">
+        Copyright © 2022 MegaSeal. All rights reserved
+      </p>
+    </footer>
   </body>
   <script>
     var d = {};
@@ -80,8 +97,7 @@
       };
 
       $.ajax(settings).done(function (response) {
-        window.location.href =
-          "C:\Users\DELL\Desktop\ISM GL Project\views\result.ejs";
+        window.location.href = "http://localhost:5500/result.html";
       });
     }
   </script>

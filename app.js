@@ -14,7 +14,6 @@ app.get("/", (req, res) => {
   res.render("form.ejs");
 });
 
-
 app.post("/report", (req, res) => {
   const report = new Report({
     accountType: req.body.accountType,
@@ -23,8 +22,12 @@ app.post("/report", (req, res) => {
     description: req.body.description,
   });
   report.save().then((result) => {
-    res.redirect("result.ejs");
+    res.send(result);
   });
 });
+
+// app.get("/result", (req, res) => {
+//   res.render("result.html");
+// });
 
 module.exports = app;
