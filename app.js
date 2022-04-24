@@ -23,6 +23,31 @@ app.get("/", (req, res) => {
   res.render("form.ejs");
 });
 
+app.post("/redirect", (req, res) => {
+    var type = req.body.type;
+
+    if(type ==1)
+        res.render("allreports.ejs");
+    else if(type ==2)
+        res.render("accinfo.ejs");
+    else if(type ==3)
+      res.render("acctype.ejs");
+});
+
+app.post("/fetchAcctype",(req,res)=>{
+    var type = req.body.type;
+    res.render("reportAcc.ejs",{accType:type});
+});
+
+app.post("/fetchAccinfo",(req,res)=>{
+  var info = req.body.info;
+  res.render("reportAccInfo.ejs",{accInfo:info});
+});
+
+app.get("/admin", (req, res) => {
+    res.render("admin.ejs");
+});
+
 function sendEMail(acctype, accinfo, accdesc, images) {
   var data =
     "<h1>Details : </h1><br><h2>Account Type : " +
