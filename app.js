@@ -68,21 +68,26 @@ app.post("/report", (req, res) => {
 });
 
 app.get("/allreports", (req, res) => {
-  Report.find({}).then((result) => {
+  Report.find({}, { images: 0 }).then((result) => {
     res.json(result);
   });
 });
 
 app.get("/reports/:id", (req, res) => {
-  Report.find({ accountType: req.params.id }).then((result) => {
+  Report.find({ accountType: req.params.id }, { images: 0 }).then((result) => {
     res.json(result);
   });
 });
 
 app.get("/search", (req, res) => {
-  Report.find({
-    accountInfo: { $regex: new RegExp("^" + req.query.sk.toLowerCase(), "i") },
-  }).then((result) => {
+  Report.find(
+    {
+      accountInfo: {
+        $regex: new RegExp("^" + req.query.sk.toLowerCase(), "i"),
+      },
+    },
+    { images: 0 }
+  ).then((result) => {
     res.json(result);
   });
 });
